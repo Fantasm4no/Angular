@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, deleteDoc, doc, getDocs, query, updateDoc } from '@angular/fire/firestore';
+import { Firestore, addDoc, collection, deleteDoc, doc, getDocs, query} from '@angular/fire/firestore';
 import { Mussic } from '../Music/mussic';
 
 
@@ -19,8 +19,7 @@ export class MusicService {
   }
 
   deleteMusic(musicId: string) {
-    const musicRef = doc(this.firestore, 'musicas', musicId);
-    return deleteDoc(musicRef);
+    return deleteDoc(doc(this.firestore, 'musicas', musicId))
   }
 
 }
