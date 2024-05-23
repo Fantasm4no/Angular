@@ -1,0 +1,6 @@
+<ul>
+    @for (msg of musics; track msg.id) {
+        <li><strong>{{msg.title}}</strong>: <span>{{msg.lyrics}}</span>
+            <button (click)="borrar(msg.id)">Borrar</button><br></li><br>
+    }
+</ul>
