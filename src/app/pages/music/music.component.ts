@@ -13,23 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class MusicComponent {
   music : Mussic = new Mussic()
 
-  musics: any
-
   constructor(private musicService: MusicService){}
-
-  ngOnInit(){
-    this.musicService.getMusics().then(data => {
-      this.musics = data.docs.map((doc: any) => {
-        console.log(doc.id)
-        console.log(doc.data)
-        return {
-          id: doc.id,
-          ...doc.data()
-        }
-      })
-      console.log('msgs', this.musics)
-    })
-  }
 
   guardar(){
     this.musicService.addMusic(this.music) 
